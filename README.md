@@ -1,3 +1,3 @@
-# vatex
+# FETA
 The source code for vatex.org
-# vatex-org.github.io
+# feta-website.github.io
