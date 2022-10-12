@@ -62,10 +62,144 @@
 
             <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 thumb">
-                    For now, the easiest way to access the benchmark data is through the <a href="https://github.com/alon-albalak/TLiDB">Transfer Learning in Dialogue Benchmarking Toolkit (TLiDB link).</a>
+                    <p>The benchmark data can be accessed through the <a href="https://github.com/alon-albalak/TLiDB">Transfer Learning in Dialogue Benchmarking Toolkit (TLiDB link)</a> with just a few simple lines of code.</p>
+                    <p>We highly recommend to install and utilize the benchmark through the TLiDB package, but the raw datasets can also be downloaded.</p>
+                    
                 </div>
                 
             </div>
+
+            <br/>
+
+            <div class="container" align="justify">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 thumb">
+                    <h4>To Download Data Through TLiDB [Recommended]:</h4>
+                    <hr>
+                    <h6>Note: TLiDB does not require an explicit downloading step. By using the TLiDB dataloader, the datasets will automatically be downloaded</h6>
+                    <h5>Quickstart (2 options):</h5>
+                    <ol>
+                    <li><b>To install TLiDB with pip (recommended for recreating baselines):</b> 
+                        <br>                        
+                        Install TLiDB with pip: <pre><code>pip install tlidb</code></pre>
+                        Then models can quickly be trained directly from the command line such as:<pre><code>tlidb --source_datasets Friends --source_tasks emory_emotion_recognition --target_datasets Friends --target_tasks reading_comprehension --do_train --do_finetune --do_eval --eval_best --model_config=bert</code></pre>
+                    </li>
+                    <li>
+                        <b>To utilize the TLiDB dataloader (recommended for use with your own models and training script):</b>
+                        <br>
+                        Install TLiDB with pip as above: <pre><code>pip install tlidb</code></pre>
+
+                        <h6>OR</h6>Install TLiDB from source:
+                        <pre><code>
+git clone git@github.com:alon-albalak/TLiDB.git
+cd TLiDB
+pip install -e .
+                        </code></pre>
+                        <b>Then</b>, follow <a href="https://github.com/alon-albalak/TLiDB/tree/master/tlidb/TLiDB#data-loading">these instructions</a> on data loading to incorporate TLiDB dataloaders into your own script.
+                    </li>
+                    </ol>
+                    
+                </div>
+            </div>
+
+            <br/>
+
+            <div class="container" align="justify">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 thumb">
+                    <h4>To Download Raw Data:</h4>
+                    <hr>
+                    <h6>Note: These links will download a zipped version of each dataset. Each raw dataset contains 6 files: the raw dataset (eg. TLiDB_Friends.json), 3 files that identify train/dev/test dialogue IDs for full-data splits (eg. TTiDB_test_ids.txt), 2 files that identify train/dev dialogue IDs for few-shot splits (eg. TTiDB_0.1_percent_few_shot_train_ids.txt)</h6>
+                    <h5>Warning: Raw data does not contain prompts, and will require writing dataloaders that already exist in TLiDB.</h5>
+                </div>
+            </div>
+            <div class="row" align="center">
+                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 thumb">
+                    <h5>FETA-DailyDialog: <a href="https://drive.google.com/uc?export=download&id=1U9dUi16RbAprUiSBmEKnEpwk45USfnml" target="_blank"><img src="image/download.png" style="height:4rem; width:4rem;"/></a></h5> 
+
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12 thumb">
+                    <h5>FETA-Friends: <a href="https://drive.google.com/uc?export=download&id=1QK_XX-d38fKeJlcTcoMT9ku3VZn6bv6H" target="_blank"><img src="image/download.png" style="height:4rem; width:4rem;"/></a></h5>
+                </div>
+            </div>
+
+        </div>
+
+        <br/>
+        <br/>
+
+
+        <div class="container" align="justify">
+            <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 thumb">
+                    <h4>Dataset Schema</h4>
+                </div>
+            </div>
+
+            <hr>
+
+            <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 thumb">
+                <pre><code>
+{
+    "metadata": {
+        "dataset_name": "Dataset Name",
+        "tasks": [ # list of task names
+            "task1",
+            "task2",
+        ],
+        "task_metadata": { # metadata about tasks, for example: labels, metrics, or metric keyword arguments 
+            "task_1": {
+                "labels": [
+                    "label1",
+                    "label2"
+                ],
+                "metrics": [
+                    "f1"
+                ]
+            },
+            "task_2":{
+                "labels": [
+                    "label1",
+                    "label2",
+                    "label3"
+                ]
+            }
+        }
+    },
+    "data": [ # list of dicts
+        {
+            "dialogue_id": "dialogue-1",
+            "dialogue_metadata":{ # can be used to determine which tasks exist in this dialogue
+                "dialogue-level-classification-task1": null,
+                "dialogue-level-classification-task2": null,
+                "turn-level-classification-task1": null,
+                "turn-level-classification-task2": null,
+            }
+            "dialogue-level-classification-task1": "ground truth label",
+            "dialogue-level-classification-task2": "ground truth label",
+            "dialogue": [ # list of dicts
+                {
+                    "turn_id": "1",
+                    "speakers": ["speaker1"],
+                    "utterance": "Example utterance",
+                    "turn-level-classification-task1": "ground truth label",
+                    "turn-level-classification-task2": "ground truth label"
+                },
+                {
+                    "turn_id": "2",
+                    "speakers": ["speaker2"],
+                    "utterance": "Second example utterance",
+                    "turn-level-classification-task1": "ground truth label",
+                    "turn-level-classification-task2": "ground truth label"
+                }
+            ]
+        }
+    ]
+}
+                </code></pre>
+                </div>
+            </div>
+        </div>
+
             <!-- <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 thumb">
                     <h6>Note: we will hold the annotations of the test sets for challenge use, but you can submit the results to our <a href="https://competitions.codalab.org/competitions/24360">VATEX Video Captioning Challenge</a> and <a href="https://competitions.codalab.org/competitions/24384">Video-guided Machine Translation Challenge</a> for evaluation. The challenges will be always valid and never expire.
