@@ -28,17 +28,22 @@
                         <li class="nav-item">
                             <a class="nav-link" href="index.html"><b>Home</b></a>
                         </li>
-                        <!-- <li class="nav-item">
-                            <a class="nav-link" href="explore.html">Explore</a>
-                        </li> -->
+                        <li class="nav-item">
+                            <a class="nav-link" href="https://github.com/alon-albalak/TLiDB/blob/master/FETA_README.md">Challenge</a>
+                        </li>
                         <li class="nav-item">
                             <a class="nav-link" href="download.html">Download</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="leaderboard.html">Leaderboard</a>
+                            <a class="nav-link" href="https://codalab.lisn.upsaclay.fr/competitions/10745">FETA-DailyDialog Leaderboard</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="https://arxiv.org/abs/2205.06262" target="_blank">Paper</a>
+                            <a class="nav-link" href="https://codalab.lisn.upsaclay.fr/competitions/10744">FETA-Friends Leaderboard</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="https://github.com/alon-albalak/TLiDB/blob/master/FETA_README.md#sample-code">Starter Code</a>
+                        <li class="nav-item">
+                            <a class="nav-link" href="https://aclanthology.org/2022.emnlp-main.751/" target="_blank">Paper</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="mailto:feta.benchmark@gmail.com">Contact</a>
@@ -113,7 +118,7 @@ pip install -e .
             </div>
             <div class="row" align="center">
                 <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 thumb">
-                    <h5>FETA-DailyDialog: <a href="https://drive.google.com/uc?export=download&id=1U9dUi16RbAprUiSBmEKnEpwk45USfnml" target="_blank"><img src="image/download.png" style="height:4rem; width:4rem;"/></a></h5> 
+                    <h5>FETA-DailyDialog: <a href="https://drive.google.com/uc?export=download&id=1c88IN_ZHpRvkkgQxmN4sfGmqN2DurQx2" target="_blank"><img src="image/download.png" style="height:4rem; width:4rem;"/></a></h5> 
 
                 </div>
                 <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12 thumb">
@@ -174,22 +179,40 @@ pip install -e .
                 "turn-level-classification-task1": null,
                 "turn-level-classification-task2": null,
             }
-            "dialogue-level-classification-task1": "ground truth label",
-            "dialogue-level-classification-task2": "ground truth label",
+            "dialogue-level-classification-task1": {
+                "label": "ground truth label",
+                "instance_id": instance_id
+            ,
+            "dialogue-level-classification-task2": {
+                "label": "ground truth label",
+                "instance_id": instance_id
+            },
             "dialogue": [ # list of dicts
                 {
                     "turn_id": "1",
                     "speakers": ["speaker1"],
                     "utterance": "Example utterance",
-                    "turn-level-classification-task1": "ground truth label",
-                    "turn-level-classification-task2": "ground truth label"
+                    "turn-level-classification-task1": {
+                        "label": "ground truth label",
+                        "instance_id": instance_id
+                    },
+                    "turn-level-classification-task2": {
+                        "label": "ground truth label",
+                        "instance_id": instance_id
+                    },
                 },
                 {
                     "turn_id": "2",
                     "speakers": ["speaker2"],
                     "utterance": "Second example utterance",
-                    "turn-level-classification-task1": "ground truth label",
-                    "turn-level-classification-task2": "ground truth label"
+                    "turn-level-classification-task1": {
+                        "label": "ground truth label",
+                        "instance_id": instance_id
+                    },
+                    "turn-level-classification-task2": {
+                        "label": "ground truth label",
+                        "instance_id": instance_id
+                    }
                 }
             ]
         }

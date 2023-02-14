@@ -6,7 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <title>FETA</title>
         <meta name="description" content="FETA is a benchmark for Few-Shot Task Transfer in Open-Domain Dialogue.">
-        <meta name="keywords" content="Few shot,Task Transfer,Dialogue,Chit Chat, Open Domain Dialogue">
+        <meta name="keywords" content="Few shot,Task Transfer,multitask,Dialogue,Chit Chat, Open Domain Dialogue">
         <meta name="author" content="FETA">
 
         <link rel="icon" href="image/favicon.ico">
@@ -29,15 +29,20 @@
                         <li class="nav-item">
                             <a class="nav-link" href="index.html"><b>Home</b></a>
                         </li>
-                        <!-- <li class="nav-item">
-                            <a class="nav-link" href="explore.html">Explore</a>
-                        </li> -->
+                        <li class="nav-item">
+                            <a class="nav-link" href="https://github.com/alon-albalak/TLiDB/blob/master/FETA_README.md">Challenge</a>
+                        </li>
                         <li class="nav-item">
                             <a class="nav-link" href="download.html">Download</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="leaderboard.html">Leaderboard</a>
+                            <a class="nav-link" href="https://codalab.lisn.upsaclay.fr/competitions/10745">FETA-DailyDialog Leaderboard</a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="https://codalab.lisn.upsaclay.fr/competitions/10744">FETA-Friends Leaderboard</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="https://github.com/alon-albalak/TLiDB/blob/master/FETA_README.md#sample-code">Starter Code</a>
                         <li class="nav-item">
                             <a class="nav-link" href="https://arxiv.org/abs/2205.06262" target="_blank">Paper</a>
                         </li>
@@ -94,8 +99,8 @@
                         <div class="card-body">
                             <img src="image/diverge.png" class="center" style="height:6rem; width:6rem;"/>
                             <br/>
-                            <center><h5 class="card-title">2 BENCHMARK TRACKS</h5>
-                            <p class="card-text"><font size="3rem">Single-source and Multi-source tracks allow for benchmarking at different granularities</font></p></center>
+                            <center><h5 class="card-title">VERSATILE APPROACHES</h5>
+                            <p class="card-text"><font size="3rem">The multitask setting allows for numerous approaches including: transfer learning, instruction/prompt fine-tuning, multitask learning, meta-learning, and more.</font></p></center>
                         </div>
                     </div>
                     <br/>
@@ -134,6 +139,26 @@
 
         </div>
 
+        <div class="container" align="justify">
+            <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 thumb">
+                    <h4>About the FETA Challenge</h4>
+                    <hr>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 thumb">
+                    The FETA challenge is being hosted at the <a href="https://sites.google.com/view/5thnlp4convai">5th Workshop on NLP for Conversational AI</a> (co-located with ACL 2023).
+                    <br>
+                    The mission of the FETA challenge is to encourage the development and evaluation of new approaches to task-transfer with limited in-domain data.
+                    Specifically, FETA focuses on the dialogue domain due to interests in empowering human-machine communication through natural language.
+                    <br>
+                    For more details on the FETA challenge, see <a href="https://github.com/alon-albalak/TLiDB/blob/master/FETA_README.md">here</a>.
+                </div>
+            </div>
+        </div>
+        <br>
+
 
         <div class="container" align="justify">
             <div class="row">
@@ -145,7 +170,7 @@
 
             <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 thumb">
-                    <a href="https://arxiv.org/abs/2205.06262" target="_blank">
+                    <a href="https://aclanthology.org/2022.emnlp-main.751/" target="_blank">
                         <img src="image/paper.png" class="rounded img-fluid mx-auto d-block" border="5"/>
                     </a>
                 </div>
@@ -153,16 +178,27 @@
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 thumb">
                         <h6>Please cite our paper as below if you use the FETA dataset.</h6>
                         <pre><code>
-@misc{feta_albalak,
-    doi = {10.48550/ARXIV.2205.06262},
-    url = {https://arxiv.org/abs/2205.06262},
-    author = {Albalak, Alon and Tuan, Yi-Lin and Jandaghi, Pegah and Pryor, Connor and Yoffe, Luke and Ramachandran, Deepak and Getoor, Lise and Pujara, Jay and Wang, William Yang},
-    keywords = {Computation and Language (cs.CL), FOS: Computer and information sciences, FOS: Computer and information sciences},
-    title = {FETA: A Benchmark for Few-Sample Task Transfer in Open-Domain Dialogue},
-    publisher = {arXiv},
-    year = {2022},
-    copyright = {Creative Commons Attribution Share Alike 4.0 International}
-    }
+                            @inproceedings{albalak-etal-2022-feta,
+                                title = "{FETA}: A Benchmark for Few-Sample Task Transfer in Open-Domain Dialogue",
+                                author = "Albalak, Alon  and
+                                  Tuan, Yi-Lin  and
+                                  Jandaghi, Pegah  and
+                                  Pryor, Connor  and
+                                  Yoffe, Luke  and
+                                  Ramachandran, Deepak  and
+                                  Getoor, Lise  and
+                                  Pujara, Jay  and
+                                  Wang, William Yang",
+                                booktitle = "Proceedings of the 2022 Conference on Empirical Methods in Natural Language Processing",
+                                month = dec,
+                                year = "2022",
+                                address = "Abu Dhabi, United Arab Emirates",
+                                publisher = "Association for Computational Linguistics",
+                                url = "https://aclanthology.org/2022.emnlp-main.751",
+                                pages = "10936--10953",
+                                abstract = "Task transfer, transferring knowledge contained in related tasks, holds the promise of reducing the quantity of labeled data required to fine-tune language models. Dialogue understanding encompasses many diverse tasks, yet task transfer has not been thoroughly studied in conversational AI. This work explores conversational task transfer by introducing FETA: a benchmark for FEw-sample TAsk transfer in open-domain dialogue.FETA contains two underlying sets of conversations upon which there are 10 and 7 tasks annotated, enabling the study of intra-dataset task transfer; task transfer without domain adaptation. We utilize three popular language models and three learning algorithms to analyze the transferability between 132 source-target task pairs and create a baseline for future work.We run experiments in the single- and multi-source settings and report valuable findings, e.g., most performance trends are model-specific, and span extraction and multiple-choice tasks benefit the most from task transfer.In addition to task transfer, FETA can be a valuable resource for future research into the efficiency and generalizability of pre-training datasets and model architectures, as well as for learning settings such as continual and multitask learning.",
+                            }
+                            
                         </code></pre>
                     </details>
                 </div>
